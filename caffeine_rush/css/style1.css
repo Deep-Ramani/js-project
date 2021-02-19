@@ -1,0 +1,238 @@
+.section-padding {
+  padding: 60px 0px;
+}
+
+.blog-info h2 {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding-top: 5px;
+}
+
+.blog-comment {
+  margin-top: 12px;
+  min-height: 30px;
+}
+
+.blog-info p, .blog-comment p {
+  color: #949494;
+}
+
+.blog-comment p:first-child {
+  float: left;
+}
+
+.blog-comment p:last-child {
+  float: right;
+  margin-right: 0;
+}
+
+.blog-comment p i {
+  color: #949494;
+}
+
+.read-more {
+  color: #949494;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.blog-img {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.imgs{
+  height: 200px;
+}
+
+.blog-img img:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.blog-img img {
+  width: 100% !important;
+  opacity: 0.7;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.price{
+  float: right;
+}
+
+.sec{
+  //border: 1px solid black;
+  margin-bottom: 20px;
+}
+.modal-title{
+  float: left !important;
+  font-family: 'Forum', cursive !important;
+  /*color: #d9ad7c !important;*/
+  color: white !important;
+  text-shadow: 2px 3px 5px 1px grey !important;
+}
+.modal-content{
+
+}
+.modal-header{
+  background-color: #d3b998 !important;
+  /*background-color: #A0522D;*/
+
+
+}
+.modal-header:before, .modal-header:after{
+  display: none !important;
+}
+.modal-body{
+  background-color: #f4e3cd;
+  /*background-color: #DEB887;*/
+}
+.mod-footer{
+  float: left !important;
+  /*padding-left: 10px; */
+  background-color: #d3b998;
+  /*background-color: #A0522D;*/
+  border-radius: 0px 0px 6px 6px; 
+}
+.buynow{
+  margin-bottom:  10px !important;
+  /*margin-top:  20px !important;*/
+  margin-right: 10px; 
+  float: right;
+}
+.margin12{
+  margin: 0 50px;
+}
+.modimg{
+  width: auto;
+  margin: 0 auto !important;
+  height: 300px;
+  box-shadow: 4px 4px 9px 2px grey;
+}
+.close{
+  margin-left: 0 !important;
+  margin-right: -7px !important;
+  float: right!important;
+  border-radius: 5px;
+  overflow: hidden !important;
+  font-size: 35px !important;
+  padding: 4px 16px !important;
+}
+h3.mod-price{
+  float: left !important;
+  margin: 0;
+  margin-left: 15px;
+  font-family: 'Kaushan Script', cursive !important;
+  color: black !important;
+}
+.mod-rate-text{
+  color: white;
+  text-align: center;
+}
+.name{
+  font-family: 'Handlee', cursive;
+}
+.mod-pr{
+  font-family: 'Cinzel', serif;
+}
+mark{
+  background-color: #d5e1df !important;
+  padding: 0 !important;
+}
+
+.pagination {
+  display: inline-block;
+  margin-left: 39%;
+  font-size: 15px;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+
+
+
+
+.text-left{
+  float: left;
+}
+
+
+.text-right{
+  float: right;
+}
+
+
+
+/*slider*/
+.callbacks_container{
+  box-shadow: 4px 4px 3px 1px #888888;
+
+}
+.sl-img{
+  min-height: 300px !important;
+}
+
+.col-sm-6.slider.callbacks_nav.prev{
+  display: none;
+}
+.col-sm-6.slider.callbacks_nav.next{
+  display: none;
+}
+.offer li{
+  list-style: disc;
+}
+/*slider*/
+
+
+
+/***********************************
+************************************
+Responsive media queries
+************************************
+***********************************/
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .blog-sec {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 767px) {
+  .blog-sec {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 20px) and (max-width: 450px) {
+  
+  .blog-sec {
+    margin-bottom: 15px;
+  }
+}
