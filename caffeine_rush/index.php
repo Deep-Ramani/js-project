@@ -47,3 +47,52 @@
 	include("header.php");
 ?>
 <!-- //Navigation -->
+<!--Slider-->
+<div class="slider">
+	<div class="callbacks_container">
+		<ul class="rslides" id="slider3">
+			<li class="img-responsive">
+				<div class="slider-img1">
+					<div class="dot">
+						<div class="container">
+							<div class="slider_banner_info_w3ls text-center">
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="img-responsive">
+				<div class="slider-img2 ">
+					<div class="dot">
+						<div class="container">
+							<div class="slider_banner_info_w3ls text-center">
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="img-responsive">
+				<div class="slider-img3 ">
+					<div class="dot">
+						<div class="container">
+							<div class="slider_banner_info_w3ls text-center">
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="img-responsive">
+				<div class="slider-img4 ">
+					<div class="dot">
+						<div class="container">
+							<div class="slider_banner_info_w3ls text-center">
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<!--//Slider-->
