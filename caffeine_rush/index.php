@@ -97,10 +97,123 @@
 </div>
 <!--//Slider-->
 
+<section class="about py-5">
+	<div>
+		<h3 class="heading text-center text-uppercase mb-5"> What We Have </h3>
+		
+		<section id="blog" class="section-padding wow fadeInUp delay-05s margins">
+		    <div>
+		      <div class="row">
+		        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+		          <div class="blog-sec">
+		            <div class="blog-img">
+		              <a href="gallery.php">
+		                <img src="images/about4.jpg" class="img-responsive height12">
+		              </a>
+		            </div>
+		            <div class="blog-info">
+		              <h2>Coffees</h2>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+		          <div class="blog-sec">
+		            <div class="blog-img">
+		              <a href="gallery.php">
+		                <img src="images/about5.jpg" class="img-responsive height12">
+		              </a>
+		            </div>
+		            <div class="blog-info">
+		              <h2>Teas</h2>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+		          <div class="blog-sec">
+		            <div class="blog-img">
+		              <a href="gallery.php">
+		                <img src="images/about6.jpeg" class="img-responsive height12">
+		              </a>
+		            </div>
+		            <div class="blog-info">
+		              <h2>Milk Shakes</h2>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+		          <div class="blog-sec">
+		            <div class="blog-img">
+		              <a href="gallery.php">
+		                <img src="images/mousse.jpg" class="img-responsive height12">
+		              </a>
+		            </div>
+		            <div class="blog-info">
+		              <h2>Cakes</h2>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </section>
+				
+			</div>
+		</section>
+<!-- //About us -->
 
+<!-- /stats -->
+<section class="stats_test pb-5 container-fluid">
+	<div class="row inner_stat_wthree_agileits">
+		<div class="col-sm-3 col-6 py-5 stats_left counter_grid">
+			<i class="far fa-building"></i>
+			<p class="counter">3</p>
+			<h4>Branches</h4>
+		</div>
+		<div class="col-sm-3 col-6 py-5 stats_left counter_grid1">
+			<i class="fas fa-users"></i>
+			<p class="counter">12</p>
+			<h4>Qualified staff</h4>
+		</div>
+		<div class="col-sm-3 col-6 py-5 stats_left counter_grid2">
+			<i class="far fa-edit"></i>
+			<p class="counter">51</p>
+			<h4>Items</h4>
+		</div>
+		<div class="col-sm-3 col-6 py-5 stats_left counter_grid3">
+			<i class="far fa-smile"></i>
+			<p class="counter">1501</p>
+			<h4>Happy Customers</h4>
+		</div>
+	</div>
+</section>
+<!-- //stats -->
 
-
-
+<!-- video -->
+<section class="py5">
+	<div>
+		<h3 class="heading text-center text-uppercase mb-5"> make it yourself </h3>
+		<div class="video-grid1">
+			<div class="demo-bg1">
+				<div class="pop-bg text-center position-relative py-5">
+					<h2 class="w3ls-title  text-capitalize pt-lg-5 pt-sm-3 ">espresso yourself</h2>
+					<h4 class="w3l-sub pt-3 pb-5 text-white">stay grounded</h4>
+					<div class="arrow-container animated fadeInDown">
+						<a href="#small-dialog1" class="arrow-2 popup-with-zoom-anim">
+							<i class="fa fa-play" aria-hidden="true"></i>
+						</a>
+						<div class="arrow-1 animated hinge infinite zoomIn"></div>
+					</div>
+					<!--  video-button-popup -->
+					<div id="small-dialog1" class="mfp-hide">
+						<div class="agileits_modal_body">
+							<iframe src=" " id="add-video"></iframe>
+						</div>
+					</div>
+					<!-- // video-button-popup -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 
 
