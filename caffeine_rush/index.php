@@ -222,7 +222,7 @@
   	<span class="w3-xxxlarge w3-text-white w3-wide"><strong>~ HISTORY ~</strong></span></p> -->
   	<img src="images1/history1.png" class="history-img w3-wide parallax">
   </div>
-</div>
+</div> -->
 
 
 <!-- Newsletter -->
