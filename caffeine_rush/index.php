@@ -216,7 +216,44 @@
 </section>
 
 
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <!-- <p><span class="w3-xxlarge w3-text-white w3-wide parallax">&nbsp;&nbsp;With the great</span><br>
+  	<span class="w3-xxxlarge w3-text-white w3-wide"><strong>~ HISTORY ~</strong></span></p> -->
+  	<img src="images1/history1.png" class="history-img w3-wide parallax">
+  </div>
+</div>
 
+
+<!-- Newsletter -->
+<section class="newsletter text-center py-5">
+	<div class="container">
+		<h3 class="heading text-center text-uppercase mb-5"> Give review </h3>
+		
+		<div class="subscribe_inner">
+			<p class="mb-4">Thanks to visit <strong>Caffiene Rush</strong>. You will find it easy way to order the products on your own choice. If you like our service just put your best review! </p>
+			<form action="addreview.php" method="post">
+				<input type="textarea" placeholder="Enter your full name" required style="margin-bottom: 10px;" name="u_name">
+				<input type="textarea" placeholder="Type in your way" required name="rvu">
+				<input type="submit" class="mt-3" value=" Send " name="addreview">
+			</form>
+			<!-- <div class="social mt-4">
+				<h4>Follow us</h4>
+				<ul class="d-flex mt-3 justify-content-center">
+					<li class="mx-2"><a href="#"><span class="fab fa-facebook"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-instagram"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-google"></span></a></li>
+				</ul>
+			</div> -->
+		</div>
+		
+	</div>
+</section>
+<!-- //Newsletter -->
+
+<?php
+	include("footer.php");
+?>
 
 
 

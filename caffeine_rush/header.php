@@ -15,7 +15,7 @@
 							<a class="nav-link <?php if($_SESSION['currentPage'] == 1) { echo 'active';} ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link <?php if($_SESSION['currentPage'] == 1) { echo 'active';} ?>" href="gallery.php">Menu</a>
+							<a class="nav-link <?php if($_SESSION['currentPage'] == 2) { echo 'active';} ?>" href="gallery.php">Menu</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link <?php if($_SESSION['currentPage'] == 3) { echo 'active';} ?>" href="services.php">Services</a>
