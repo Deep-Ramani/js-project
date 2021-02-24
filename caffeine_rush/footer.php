@@ -10,7 +10,7 @@
 			</div>
 			<div class="col-lg-3 col-md-12 f_pdng">
 				<ul class="py-lg-4">
-					<li class="mx-2"><a href="homepage.php">Home</a></li>
+					<li class="mx-2"><a href="index.php">Home</a></li>
 					<li class="mx-2"><a href="gallery.php">Menu</a></li>
 					<li class="mx-2"><a href="services.php">Services</a></li>
 					<li class="mx-2"><a href="contact.php">Contact Us</a></li>
