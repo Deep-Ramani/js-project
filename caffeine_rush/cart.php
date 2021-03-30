@@ -7,6 +7,7 @@
 <head>
 	<title>Caffeine Rush | The Happy Hours</title>
 	<link rel="shortcut icon" href="ico/logo1.ico">
+
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
