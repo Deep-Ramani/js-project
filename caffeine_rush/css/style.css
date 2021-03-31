@@ -194,7 +194,9 @@ li.nav-item {
     display: block;
 }
 
+.dropup:hover .dropbtn {
 
+}
 
 
 
@@ -837,7 +839,9 @@ ul.portfolio-categ li a{
     text-decoration: underline;
 }
 
+.port-info{
 
+}
 
 /*-- //About --*/
 
@@ -2102,7 +2106,9 @@ p.date {
 	h1.heading, h2.heading, h3.heading {
 		font-size: 45px;
 	}
-
+	.slider-img1, .slider-img2, .slider-img3, .slider-img4 {
+		/*min-height: 430px;*/
+	}
 	.slider_banner_info_w3ls {
 		padding-top: 26%;
 	}
@@ -2394,4 +2400,4 @@ p.date {
 	}
 }
 
-}
+
