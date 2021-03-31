@@ -1,3 +1,7 @@
+<?php
+	session_start();
+	$_SESSION["currentPage"] = 1;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +44,7 @@
 		<!-- <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet"> -->
 	<!-- fonts -->
 </head>
+
 <body>
 
 <!-- Navigation -->
@@ -47,6 +52,7 @@
 	include("header.php");
 ?>
 <!-- //Navigation -->
+
 <!--Slider-->
 <div class="slider">
 	<div class="callbacks_container">
@@ -97,6 +103,7 @@
 </div>
 <!--//Slider-->
 
+<!-- About us -->
 <section class="about py-5">
 	<div>
 		<h3 class="heading text-center text-uppercase mb-5"> What We Have </h3>
@@ -160,6 +167,7 @@
 		</section>
 <!-- //About us -->
 
+
 <!-- /stats -->
 <section class="stats_test pb-5 container-fluid">
 	<div class="row inner_stat_wthree_agileits">
@@ -214,6 +222,83 @@
 		</div>
 	</div>
 </section>
+<!-- //video -->
+
+<!--Team-->
+<!-- <section class="Team py-5">
+	<div class="container">
+	<h3 class="heading text-center text-uppercase mb-5"> Our staff </h3>
+		<div class="row inner-sec-w3layouts-agileinfo">
+			<div class="col-md-4 col-sm-12 team-grids">
+				<img src="images/.jpg" class="img-responsive" alt="">
+				<div class="team-info">
+					<div class="caption">
+						<h4>Deep Ramani</h4>
+						<h6>Barista &</h6>
+						<h6>Pastry chef</h6>
+					</div>
+					<div class="social-icons-section">
+						<a class="fac" href="#">
+							<i class="fab fa-facebook"></i>
+						</a>
+						<a class="twitter" href="#">
+							<i class="fab fa-twitter-square"></i>
+						</a>
+						<a class="pinterest" href="#">
+							<i class="fab fa-instagram"></i>
+						</a>
+
+					</div>
+
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 team-grids">
+				<img src="images/.jpg" class="img-responsive" alt="">
+				<div class="team-info">
+					<div class="caption">
+						<h4>Ajay Markana</h4>
+						<h6>Tea Sommelier</h6>
+					</div>
+					<div class="social-icons-section">
+						<a class="fac" href="#">
+							<i class="fab fa-facebook"></i>
+						</a>
+						<a class="twitter" href="#">
+							<i class="fab fa-twitter-square"></i>
+						</a>
+						<a class="pinterest" href="#">
+							<i class="fab fa-instagram"></i>
+						</a>
+
+					</div>
+				</div>
+			</div> -->
+			<!-- <div class="col-md-4 col-sm-12 team-grids">
+				<img src="images/.jpg" class="img-responsive" alt="">
+				<div class="team-info">
+					<div class="caption">
+						<h4>Raj Nakum</h4>
+						<h6>Frappista</h6>
+					</div>
+					<div class="social-icons-section">
+						<a class="fac" href="#">
+							<i class="fab fa-facebook"></i>
+						</a>
+						<a class="twitter" href="#">
+							<i class="fab fa-twitter-square"></i>
+						</a>
+						<a class="instagram" href="#">
+							<i class="fab fa-instagram"></i>
+						</a>
+
+					</div> -->
+				<!-- </div>
+			</div>
+		</div>
+	</div>
+</section> -->
+<!--//Team-->
+
 
 
 <div class="bgimg-2 w3-display-container w3-opacity-min">
@@ -222,7 +307,9 @@
   	<span class="w3-xxxlarge w3-text-white w3-wide"><strong>~ HISTORY ~</strong></span></p> -->
   	<img src="images1/history1.png" class="history-img w3-wide parallax">
   </div>
-</div> -->
+</div>
+
+
 
 
 <!-- Newsletter -->
@@ -286,80 +373,27 @@
 
 
 
+<!-- js-scripts -->		
 
 
 
+	<!-- js -->
+	<!-- <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script> -->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- <script type="text/javascript" src="js/bootstrap.js"></script>  -->
+	<!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<!-- //js -->	
+	
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- js-scripts -->	
-
-
-
-<script src="js/jquery-2.2.3.min.js"></script>
-
-<!-- Banner Responsive slider -->
-<script src="js/responsiveslides.min.js"></script>
+	<!-- Banner Responsive slider -->
+	<script src="js/responsiveslides.min.js"></script>
 	<!-- // Banner Responsiveslides -->
+	
+
+	
 	<!--pop-up-box -->
 	<script src="js/jquery.magnific-popup.js"></script>
 	<script>
