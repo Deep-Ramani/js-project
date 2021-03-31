@@ -2,6 +2,7 @@
 	session_start();
 	$_SESSION["currentPage"] = 2;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,19 +29,26 @@
 
 	<link rel="stylesheet" href="css/hover.css" />
     <!-- css for hover -->
-<!-- //css files -->
 
-<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
 
-<!-- fonts -->
-<link href="https://fonts.googleapis.com/css?family=Forum|Handlee|Kaushan+Script" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Kirang+Haerang" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet"> -->
-<!-- fonts -->  
+	<!-- //css files -->
+
+	<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Forum|Handlee|Kaushan+Script" rel="stylesheet">
+		<!-- <link href="https://fonts.googleapis.com/css?family=Kirang+Haerang" rel="stylesheet"> -->
+		<!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> -->
+		<!-- <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet"> -->
+	<!-- fonts -->
+
+	
+	
 </head>
+
 <body>
-	<!-- Navigation -->
+
+<!-- Navigation -->
 <?php
 	include("header.php");
 ?>
@@ -562,3 +570,4 @@
 	
 <!-- //js-scripts -->
 </body>
+</html>
