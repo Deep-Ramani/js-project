@@ -1,22 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
--- https://www.phpmyadmin.net/
+-- version 4.2.7.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2019 at 03:17 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: May 04, 2021 at 10:37 AM
+-- Server version: 5.6.20
+-- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `cafe_shop`
@@ -25,13 +23,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+`id` int(11) NOT NULL,
+  `username` varchar(55) NOT NULL,
+  `password` varchar(55) NOT NULL,
+  `email` varchar(128) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`, `email`) VALUES
+(1, 'deep', 'deep', 'deepramani@gmail.com');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `category`
 --
-use cafe_shop;
-CREATE TABLE `category` (
-  `category_id` int(20) NOT NULL,
+
+CREATE TABLE IF NOT EXISTS `category` (
+`category_id` int(20) NOT NULL,
   `category_name` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `category`
@@ -49,15 +67,15 @@ INSERT INTO `category` (`category_id`, `category_name`) VALUES
 -- Table structure for table `orders`
 --
 
-CREATE TABLE `orders` (
-  `Order id` int(20) NOT NULL,
+CREATE TABLE IF NOT EXISTS `orders` (
+`Order id` int(20) NOT NULL,
   `Customer Name` varchar(20) NOT NULL,
   `Product Id` int(20) NOT NULL,
   `Address` varchar(20) NOT NULL,
   `Phone No` int(10) NOT NULL,
   `Quantity` int(20) NOT NULL,
   `Amount` float NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -65,69 +83,50 @@ CREATE TABLE `orders` (
 -- Table structure for table `products`
 --
 
-CREATE TABLE `products` (
-  `product_id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `products` (
+`product_id` int(10) NOT NULL,
   `product_name` varchar(20) NOT NULL,
   `category` varchar(20) NOT NULL,
-  `price` float(20,2) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `price` float(20,2) NOT NULL,
+  `image` varchar(64) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=108 ;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `category`, `price`) VALUES
-(1, 'Affogato', 'coffee', 165.00),
-(2, 'Cold Coffee', 'coffee', 140.00),
-(3, 'Cafe Latte', 'coffee', 90.00),
-(4, 'Cappuccino', 'coffee', 110.00),
-(5, 'Double Espresso', 'coffee', 80.00),
-(6, 'Espresso', 'coffee', 65.00),
-(7, 'Flat White', 'coffee', 120.00),
-(8, 'long Macchiato', 'coffee', 110.00),
-(9, 'Long Black', 'coffee', 70.00),
-(10, 'Mocha', 'coffee', 120.00),
-(11, 'Piccolo Latte', 'coffee', 170.00),
-(12, 'Ristretto', 'coffee', 105.00),
-(13, 'Short Macchiato', 'coffee', 80.00),
-(14, 'Black Tea', 'tea', 50.00),
-(15, 'Blooming Tea', 'tea', 45.00),
-(16, 'Green Tea', 'tea', 60.00),
-(17, 'Herbal Tea', 'tea', 35.00),
-(18, 'Mate Tea', 'tea', 65.00),
-(19, 'Olong Tea', 'tea', 50.00),
-(20, 'Rooibos Tea', 'tea', 40.00),
-(21, 'White Tea', 'tea', 30.00),
-(22, 'Yellow Tea', 'tea', 55.00),
-(23, 'Blueberry', 'milkshake', 210.00),
-(24, 'Birthday Cake ', 'milkshake', 250.00),
-(25, 'Drumstick', 'milkshake', 180.00),
-(26, 'Galaxy', 'milkshake', 280.00),
-(27, 'Chocolate', 'milkshake', 260.00),
-(28, 'Harvey', 'milkshake', 250.00),
-(29, 'Oreo', 'milkshake', 250.00),
-(30, 'Monster Candy', 'milkshake', 310.00),
-(31, 'Sp. Caffeine Rush', 'milkshake', 340.00),
-(32, 'Ultimate Strawberry', 'milkshake', 260.00),
-(33, 'Strawberry', 'milkshake', 180.00),
-(34, 'Choco Caramel', 'milkshake', 230.00),
-(35, 'Choco Fantasy', 'cake', 300.00),
-(36, 'Blue Bucks', 'cake', 340.00),
-(37, 'Butterscotch', 'cake', 480.00),
-(38, 'Strawberry Cake', 'cake', 250.00),
-(39, 'Blue Mermaid', 'cake', 675.00),
-(40, 'Stovetop  Raspberry', 'cake', 275.00),
-(41, 'Fruit Almond', 'cake', 325.00),
-(42, 'Rainbow Vanilla', 'cake', 575.00),
-(43, 'Purple Marble', 'cake', 750.00),
-(44, 'Black Cherry', 'cake', 600.00),
-(45, 'Straw Mousse', 'cake', 675.00),
-(46, 'Irish Coffee', 'cake', 425.00),
-(47, 'Rose Vanilla', 'cake', 350.00),
-(48, 'Gummy Bear', 'cake', 425.00),
-(49, 'Snicker Chocolate', 'cake', 550.00),
-(50, 'Orange Fireball', 'cake', 450.00),
-(51, 'Vegan Chocolate', 'cake', 550.00);
+INSERT INTO `products` (`product_id`, `product_name`, `category`, `price`, `image`) VALUES
+(101, 'Blue', 'cake', 260.00, 'blue.jpg'),
+(100, 'Black', 'cake', 240.00, 'black.jpg'),
+(99, 'Oolong', 'tea', 80.00, 'OOLONG.jpg'),
+(98, 'Mate Tea', 'tea', 40.00, 'MATE TEA.jpg'),
+(97, 'Long Black', 'tea', 50.00, 'Long Black.jpg'),
+(96, 'Herbal Tea', 'tea', 40.00, 'HERBAL TEA.jpg'),
+(95, 'Green Tea', 'tea', 40.00, 'GREEN tea.jpg'),
+(93, 'Black Tea', 'tea', 80.00, 'black tea.jpg'),
+(94, 'BLOOMING TEAS', 'tea', 80.00, 'BLOOMING TEAS.jpg'),
+(92, 'Affogato', 'tea', 40.00, 'Affogato.jpg'),
+(89, 'Mocha', 'coffee', 80.00, 'Mocha.jpg'),
+(88, 'Long Macchiato', 'coffee', 80.00, 'long macchiato.jpg'),
+(87, 'Flat White', 'coffee', 100.00, 'Flat White.jpg'),
+(86, 'Espresso', 'coffee', 80.00, 'espresso.jpeg'),
+(85, 'Double Espresso', 'coffee', 120.00, 'double espresso.jpg'),
+(84, 'Cafe Latte', 'coffee', 100.00, 'Cafe Latte.jpg'),
+(83, 'Cappuccino', 'coffee', 80.00, 'Cappuccino.jpg'),
+(82, 'Cold Coffee', 'coffee', 60.00, 'cold coffee.jpg'),
+(81, 'Strawberry', 'milkshake', 150.00, 'strawberry.jpeg'),
+(79, 'Harvey', 'milkshake', 250.00, 'harvey.jpg'),
+(78, 'Chocolate', 'milkshake', 260.00, 'chocolate.jpeg'),
+(77, 'Galaxy', 'milkshake', 250.00, 'galaxy.png'),
+(76, 'Drumstick', 'milkshake', 180.00, 'Drumstick.jpg'),
+(75, 'Birthday Cake', 'milkshake', 250.00, 'birthday cake.jpeg'),
+(74, 'BlueBerry', 'milkshake', 210.00, 'blueberry.jpeg'),
+(102, 'Cchoco', 'cake', 320.00, 'cchoco.jpg'),
+(103, 'Cherry', 'cake', 400.00, 'cherry.jpg'),
+(104, 'Choco', 'cake', 280.00, 'choco.jpg'),
+(105, 'Freez', 'cake', 350.00, 'freez.jpg'),
+(106, 'Fruit', 'cake', 350.00, 'fruit.jpg'),
+(107, 'Mousse', 'cake', 280.00, 'mousse.jpg');
 
 -- --------------------------------------------------------
 
@@ -135,7 +134,7 @@ INSERT INTO `products` (`product_id`, `product_name`, `category`, `price`) VALUE
 -- Table structure for table `ratings`
 --
 
-CREATE TABLE `ratings` (
+CREATE TABLE IF NOT EXISTS `ratings` (
   `r_id` int(20) NOT NULL,
   `customer name` varchar(20) NOT NULL,
   `product_id` int(20) NOT NULL,
@@ -148,7 +147,7 @@ CREATE TABLE `ratings` (
 -- Table structure for table `table booking`
 --
 
-CREATE TABLE `table booking` (
+CREATE TABLE IF NOT EXISTS `table booking` (
   `booking_id` int(20) NOT NULL,
   `customer name` varchar(20) NOT NULL,
   `phone no` int(20) NOT NULL,
@@ -165,100 +164,99 @@ CREATE TABLE `table booking` (
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `u_id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+`u_id` int(10) NOT NULL,
   `first_name` varchar(20) NOT NULL,
   `last_name` varchar(20) NOT NULL,
   `email` varchar(40) NOT NULL,
   `password` varchar(10) NOT NULL,
   `c_password` varchar(10) NOT NULL,
   `phone_no` bigint(10) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`u_id`, `first_name`, `last_name`, `email`, `password`, `c_password`, `phone_no`) VALUES
-(12, 'Cafe', 'Admin', 'admin@gmail.com', 'admin', 'admin', 9624209757),
-(13, 'parth', 'pokar', 'parthpokar@gmail.com', 'parth', 'parth', 9624209757),
-(14, 'hiren', 'raithatha', 'user@gmail.com', 'user', 'user', 1234567890),
-(16, 'prince', 'bhut', 'bhutprince@gmail.com', 'bhut', 'bhut', 134567890),
-(17, 'biren', 'chauhan', 'birenchauhan@gmail.com', 'biren', 'biren', 9567865566),
-(18, 'raj', 'nakum', 'raj@gmail.com', 'raj', 'raj', 1245789865),
-(19, 'kishan', 'patel', 'kishanpatel@gmail.com', 'kishan', 'kishan', 1234567890);
+(20, 'deep', 'ramani', 'deepramani@gmail.com', 'deep', 'deep', 9099404287),
+(27, 'Ajay', 'Markana', 'ajaymarkana@gmail.com', 'ajay', 'ajay', 9586411019);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
-  ADD PRIMARY KEY (`category_id`);
+ ADD PRIMARY KEY (`category_id`);
 
 --
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`Order id`);
+ ADD PRIMARY KEY (`Order id`);
 
 --
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_id`),
-  ADD UNIQUE KEY `product_name` (`product_name`);
+ ADD PRIMARY KEY (`product_id`), ADD UNIQUE KEY `product_name` (`product_name`);
 
 --
 -- Indexes for table `ratings`
 --
 ALTER TABLE `ratings`
-  ADD PRIMARY KEY (`r_id`);
+ ADD PRIMARY KEY (`r_id`);
 
 --
 -- Indexes for table `table booking`
 --
 ALTER TABLE `table booking`
-  ADD PRIMARY KEY (`booking_id`);
+ ADD PRIMARY KEY (`booking_id`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`u_id`),
-  ADD UNIQUE KEY `email` (`email`);
+ ADD PRIMARY KEY (`u_id`), ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+MODIFY `category_id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Order id` int(20) NOT NULL AUTO_INCREMENT;
-
+MODIFY `Order id` int(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
-
+MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=108;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `u_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-COMMIT;
-
+MODIFY `u_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

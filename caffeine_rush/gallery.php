@@ -38,11 +38,14 @@
 		background: #2196F3;
 		box-sizing: border-box;
 		cursor: pointer;
+		border-radius: 5px;
 		margin: 10px;
 	  }
 	  .col-md-3{
 		  margin-bottom:10px;
 	  }
+	 
+	 
 	  </style>
 
     <!-- css for hover -->
@@ -103,7 +106,7 @@
 			
 			<button id="btn_coffee" class="mybtn" value="coffee" >Coffee</button>
 			<button id="btn_tea" class="mybtn" value="tea" >Tea</button>
-			<button id="btn_milkshake" class="mybtn" value="milkshake" >Milkshake</button>
+			<button id="btn_milkshake" class="mybtn" valuebtn="milkshake" >Milkshake</button>
 			<button id="btn_cake" class="mybtn" value="cake" >Cake</button>
 		</div>
       	<div class="row" id="product_content">	
@@ -177,14 +180,14 @@
 
 
 <!-- modal for drinks-->
-<div class="container first">
-	<div class="img col-sm-8 " >
+<!-- <div class="container first">
+	<div class="img col-sm-8 " > -->
 	    <!-- Modal -->
-	    <div class="modal fade style-7" id="myModal" role="dialog"  >
-	        <div class="modal-dialog">
+	    <!-- <div class="modal fade style-7" id="myModal" role="dialog"  >
+	        <div class="modal-dialog"> -->
 
 	        <!-- Modal content-->
-	            <div class="modal-content">
+	            <!-- <div class="modal-content">
 	                <div class="modal-header">
 	                    <h3 class="modal-title"> Menu Item</h3>
 	                    <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -218,20 +221,20 @@
 	        </div>
 	    </div>
 	</div>
-</div>
+</div> -->
 <!-- modal for drinks-->
 
 
 
 <!-- modal for cakes -->
-<div class="container first">
-	<div class="img col-sm-8">
+<!-- <div class="container first">
+	<div class="img col-sm-8"> -->
 	    <!-- Modal -->
-	    <div class="modal fade style-7" id="myModal1" role="dialog">
-	        <div class="modal-dialog">
+	    <!-- <div class="modal fade style-7" id="myModal1" role="dialog">
+	        <div class="modal-dialog"> -->
 
 	        <!-- Modal content-->
-	            <div class="modal-content">
+	            <!-- <div class="modal-content">
 	                <div class="modal-header">
 	                    <h3 class="modal-title"> Menu Item</h3>
 	                    <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -269,7 +272,7 @@
 	        </div>
 	    </div>
 	</div>
-</div>
+</div> -->
 <!-- modal for cakes -->
 
 
@@ -307,13 +310,13 @@
 	  <script src="js/jquery.min.js"></script>
 	  <!-- <script src="js/sequence.jquery.js"></script> -->
 	  <script src="js/jquery-hover-effect.js"></script>
-	  <script type="text/javascript">
+	  <!-- <script type="text/javascript">
 	 		setTimeout(() => {
 				$(document).ready(function() {
 					$('ul.da-thumbs > li').hoverdir();
 				});
 			}, 3000);
- 		</script>
+ 		</script> -->
 	  <!-- Template Custom Javascript File -->
 	 
 
@@ -323,27 +326,27 @@
 
 	<script>
 		// You can also use "$(window).load(function() {"
-		$(document).ready(function() {
-			// Slideshow 3
-			$("#slider3").responsiveSlides({
-				auto: true,
-				pager: false,
-				nav: true,
+	// 	$(document).ready(function() {
+	// 		// Slideshow 3
+	// 		$("#slider3").responsiveSlides({
+	// 			auto: true,
+	// 			pager: false,
+	// 			nav: true,
 
-				speed: 500,
-				namespace: "callbacks",
-				before: function () {
-					$('.events').append("<li>before event fired.</li>");
-					$('ul.da-thumbs > li').hoverdir();
-				},
-				after: function () {
-					$('.events').append("<li>after event fired.</li>");
-				}
-			});
+	// 			speed: 500,
+	// 			namespace: "callbacks",
+	// 			before: function () {
+	// 				$('.events').append("<li>before event fired.</li>");
+	// 				$('ul.da-thumbs > li').hoverdir();
+	// 			},
+	// 			after: function () {
+	// 				$('.events').append("<li>after event fired.</li>");
+	// 			}
+	// 		});
 
 			
-		});
-	</script>
+	// 	});
+	// </script>
 	<!-- // Banner Responsive slider -->
 
 
@@ -407,7 +410,7 @@
 
 
 
-			<script type="text/javascript">
+			<!-- <script type="text/javascript">
 				$(document).on("click", ".image-zoom", function(){
     				var src= $(this).data('src');
     				$("#modal-img").attr('src',src);
@@ -436,7 +439,7 @@
     				var id=$(this).data('id');
     				$("#data-id").attr('value',id);
 				});
-			</script>
+			</script> -->
 	
 <!-- //js-scripts -->
 </body>
