@@ -41,7 +41,7 @@
 	<!-- fonts -->
 		<!-- <link href="https://fonts.googleapis.com/css?family=Kirang+Haerang" rel="stylesheet"> -->
 		<!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> -->
-		<!-- <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet"> -->
+		<!-- <link 	href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet"> -->
 	<!-- fonts -->
 </head>
 

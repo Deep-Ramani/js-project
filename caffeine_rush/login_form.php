@@ -76,7 +76,7 @@ $_SESSION["currentPage"] = 6;
                 <div class="col-sm-6 col-sm-offset-3 form-box">
                    <div class="form-top">
                       <div class="form-top-left">
-                         <h3>Login to our site</h3>
+                         <h3>Login to Caffeine Rush</h3>
                          <p>Enter your username and password to log on:</p>
                      </div>
                      <div class="form-top-right">
@@ -97,7 +97,7 @@ $_SESSION["currentPage"] = 6;
                         <a href="forgot.php" class="fpwd">
                         Forgot Password?</a>
                     </div>
-                    <button type="submit" class="btn" name="login">Login</button>
+                    <button type="submit" class="btn" name="login" onclick="return validate()">Login</button>
 
 
                 </form>
@@ -131,6 +131,20 @@ $_SESSION["currentPage"] = 6;
         };
     </script>
 
+   <script type="text/javascript">
+   /*   function validate(){
+     var username=document.getElementById('form-username').value;
+     var password=document.getElementById('form-password').value;
+     if(username == "admin" && password == "admin"){
+          alert("Login Succesfully.");
+          return true;
+     }else{
+          alert(" Incorrect Username and password \n Please enter valid Username and Password");
+          return false;
+     }
+}
+
+    </script>
 </body>
 
 </html>
