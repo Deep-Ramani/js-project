@@ -10,7 +10,7 @@
         </li>
 
 
-        
+<!--         
         <li class="<?php if($_SESSION['currentPage'] == 11) { echo 'active';} ?>">
           <a class="" href="reviews.php">
             <i class="icon_genius"></i>
@@ -28,7 +28,7 @@
             <i class="icon_pencil"></i>
             <span>Orders</span>
           </a>
-        </li>
+        </li> -->
       
 
 

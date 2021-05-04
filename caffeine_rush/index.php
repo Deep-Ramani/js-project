@@ -105,65 +105,7 @@
 
 <!-- About us -->
 <section class="about py-5">
-	<div>
-		<h3 class="heading text-center text-uppercase mb-5"> What We Have </h3>
-		
-		<section id="blog" class="section-padding wow fadeInUp delay-05s margins">
-		    <div>
-		      <div class="row">
-		        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		          <div class="blog-sec">
-		            <div class="blog-img">
-		              <a href="gallery.php">
-		                <img src="images/about4.jpg" class="img-responsive height12">
-		              </a>
-		            </div>
-		            <div class="blog-info">
-		              <h2>Coffees</h2>
-		            </div>
-		          </div>
-		        </div>
-		        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		          <div class="blog-sec">
-		            <div class="blog-img">
-		              <a href="gallery.php">
-		                <img src="images/about5.jpg" class="img-responsive height12">
-		              </a>
-		            </div>
-		            <div class="blog-info">
-		              <h2>Teas</h2>
-		            </div>
-		          </div>
-		        </div>
-		        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		          <div class="blog-sec">
-		            <div class="blog-img">
-		              <a href="gallery.php">
-		                <img src="images/about6.jpeg" class="img-responsive height12">
-		              </a>
-		            </div>
-		            <div class="blog-info">
-		              <h2>Milk Shakes</h2>
-		            </div>
-		          </div>
-		        </div>
-		        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-		          <div class="blog-sec">
-		            <div class="blog-img">
-		              <a href="gallery.php">
-		                <img src="images/mousse.jpg" class="img-responsive height12">
-		              </a>
-		            </div>
-		            <div class="blog-info">
-		              <h2>Cakes</h2>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-		  </section>
-				
-			</div>
+	
 		</section>
 <!-- //About us -->
 
@@ -416,7 +358,7 @@
 				mainClass: 'my-mfp-zoom-in',
 				callbacks: {
         			open: function() {
-							$("#add-video").attr('src','videos/video.mp4');
+							$("#add-video").attr('src','https://www.youtube.com/embed/lS3AyXfplUc');
 					},
 			        close: function() {
 			        	// debugger;

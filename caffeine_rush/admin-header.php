@@ -1,3 +1,9 @@
+ <?php
+    if(!isset($_SESSION["user_id"])){
+      header("location:adminlogin.php");
+    }
+ ?>
+ 
  <header class="header dark-bg">
   <div class="toggle-nav">
     <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
@@ -15,7 +21,7 @@
 
 
       <li id="mail_notificatoin_bar" class="">
-        <a class="" href="gallery.php">
+        <a class="" href="adminpage.php">
           <i class="icon_house_l"></i>
         </a>
       </li>
@@ -37,7 +43,7 @@
     <li class="dropdown">
       <a data-toggle="dropdown" class="dropdown-toggle" href="#">
         <span class="profile-ava">
-          <img alt="" src="admin-img/avatar1_small.jpg">
+          <img alt="" src="#">
         </span>
         <span class="username">Admin</span>
         <b class="caret"></b>

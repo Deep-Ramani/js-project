@@ -1,6 +1,8 @@
 <?php
 session_start();
 $_SESSION["currentPage"] = 10;
+include("dbcnt.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,50 +62,12 @@ $_SESSION["currentPage"] = 10;
           </div>
         </div>
 
-        <div class="row">
-          <a href="basic_table.php"><div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box green-bg">
-              <i class="fa fa-cubes"></i>
-              <div class="count">51</div>
-              <div class="title">Register User</div>
-            </div>
-            <!--/.info-box-->
-          </div></a>
-          <!--/.col-->
+        
 
 
-          <a href="admin-order.php"><div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box dark-bg">
-              <i class="fa fa-truck"></i>
-              <div class="count">12</div>
-              <div class="title">Cake Order</div>
-            </div>
-            <!--/.info-box-->
-          </div></a>
-          <!--/.col-->
+         
 
-          <a href="table-booking.php"><div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box brown-bg">
-              <i class="fa fa-book"></i>
-              <div class="count">3</div>
-              <div class="title">Book Table</div>
-            </div>
-            <!--/.info-box-->
-          </div></a>
-          <!--/.col-->
-
-          <a href="reviews.php"><div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box blue-bg">
-              <i class="fa fa-thumbs-o-up"></i>
-              <div class="count">2577</div>
-              <div class="title">Reviews</div>
-            </div>
-            <!--/.info-box-->
-          </div></a>
-          <!--/.col-->
-
-        </div>
-        <!--/.row-->
+         
 
 
 
@@ -130,14 +94,9 @@ $_SESSION["currentPage"] = 10;
                   <div class="form quick-post">
                     <!-- Edit profile form (not working)-->
                     <!-- -----------------------------------------------                      -->
-                    <form class="form-horizontal" action="" method="post">
+                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
                       <!-- Title -->
-                      <div class="form-group">
-                        <label class="control-label col-lg-2" for="title" name="p_id">Product Id</label>
-                        <div class="col-lg-10">
-                          <input type="text" class="form-control" id="title">
-                        </div>
-                      </div>
+                     
                       <!-- Content -->
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="content">Product Name</label>
@@ -166,28 +125,53 @@ $_SESSION["currentPage"] = 10;
                         </div>
                       </div>
 
+                      <!-- Image upload -->
+                      <div class="form-group">
+                      <label class="control-label col-lg-2" for="tags">Choose Image</label>
+                      <div class="col-lg-10">
+                          <input type="file" class="form-control" id="tags" name="p_img" required>
+                        </div>
+                      </div>
+
                       <!-- Buttons -->
                       <div class="form-group">
                         <!-- Buttons -->
                         <div class="col-lg-offset-2 col-lg-9">
-                          <button type="submit" class="btn btn-primary" name="add">Add</button>
+                          <input type="submit" class="btn btn-primary" name="add_pr" value="Submit">
                           <button type="reset" class="btn btn-default">Reset</button>
                         </div>
                       </div>
                     </form>
                     <?php 
-                    include("dbcnt.php");
 
-                    if (isset($_POST['add'])){
+                    if (isset($_POST['add_pr'])){
                       $pnm=$_POST['p_name'];
                       $pcat=$_POST['p_cat'];
                       $pprc=$_POST['p_price'];
+                      $pimg = "";
 
+                      if(isset($_FILES['p_img'])){
 
+                        if($_FILES['p_img']['error'] == "0"){
+                          $target="product_imgs/".basename($_FILES['p_img']['name']);
+                          if(move_uploaded_file($_FILES['p_img']['tmp_name'],$target)) {
+                            $fname = "product_imgs/".basename($_FILES['p_img']['name']);
+                            $pimg = $_FILES['p_img']['name'];	
+                          }
+                        }
+                        else{
+                          $msg = "Image Not Uploaded!";
+                          $pimg = "";	
+                    
+                        }
 
-                      $qr = "insert into products (product_name, category, price) values('$pnm','$pcat','$pprc')";
+                      }
+
+                     
+
+                      $qr = "insert into products (product_name, category, price, image) values('$pnm','$pcat','$pprc','$pimg')";
                       mysqli_query($con,$qr);
-                      
+                          
                           //header("location:adminpage.php");
                     }
                     ?>
@@ -269,78 +253,82 @@ $_SESSION["currentPage"] = 10;
           
         </div>
 
-        <div class="col-md-3">
+        <?php
+$cakecount = "";
+$teacount = "";
+$milkshakecount = "";
+$coffeecount = "";
+$ucount = "";
 
-          <div class="social-box google-plus">
-            <i class="fa fa-google-plus"></i>
-            <ul>
-              <li>
-                <strong>869</strong>
-                <span>followers</span>
-              </li>
-              <li>
-                <strong>256</strong>
-                <span>circles</span>
-              </li>
-            </ul>
+	
+	$m = mysqli_query($con,"select count(*) from products where category = 'milkshake'");
+	$c = mysqli_query($con,"select count(*) from products where category = 'coffee'");
+	$t = mysqli_query($con,"select count(*) from products where category = 'tea'");
+  $ck = mysqli_query($con,"select count(*) from products where category = 'cake'");
+  $uc = mysqli_query($con,"select count(*) from users");
+
+  if(mysqli_num_rows($uc) > 0){
+		$mr = mysqli_fetch_array($uc);
+		$ucount = $mr[0];
+	}              
+	if(mysqli_num_rows($m) > 0){
+		$mr = mysqli_fetch_array($m);
+		$milkshakecount = $mr[0];
+	}
+	if(mysqli_num_rows($c) > 0){
+		$mr = mysqli_fetch_array($c);
+		$coffeecount = $mr[0];
+	}
+	if(mysqli_num_rows($t) > 0){
+		$mr = mysqli_fetch_array($t);
+		$teacount = $mr[0];
+	}
+  if(mysqli_num_rows($ck) > 0){
+		$mr = mysqli_fetch_array($ck);
+		$cakecount = $mr[0];
+	}
+	
+
+
+?>
+
+        <div class="row">
+          <a href="basic_table.php"><div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+
+            <div class="info-box green-bg">
+            <div class="title" style="font-size: 18px;">Registered User</div>
+              <i class="fa fa-cubes"></i>
+              <div class="count"><?=$ucount?></div>
+            </div>
+            </a>
+            
+            <div class="info-box green-bg">
+            <div class="title" style="font-size: 18px;">Cakes</div>
+              <i class="fa fa-cubes"></i>
+              <div class="count"><?=$cakecount?></div>
+            </div>
+            
+
+            <div class="info-box green-bg">
+            <div class="title" style="font-size: 18px;">Milkshakes</div>
+              <i class="fa fa-cubes"></i> 
+              <div class="count"><?=$milkshakecount?></div>
+            </div>
+
+            <div class="info-box green-bg">
+            <div class="title" style="font-size: 18px;">Coffee</div>
+              <i class="fa fa-cubes"></i>
+              <div class="count"><?=$coffeecount?></div>
+            </div>
+
+            <div class="info-box green-bg">
+            <div class="title" style="font-size: 18px;">Tea</div>
+              <i class="fa fa-cubes"></i> 
+              <div class="count"><?=$teacount?></div>
+            </div>
+            <!--/.info-box-->
           </div>
-          <!--/social-box-->
-
-        </div>
-        <!--/col-->
-        <div class="col-md-3">
-
-          <div class="social-box facebook">
-            <i class="fa fa-facebook"></i>
-            <ul>
-              <li>
-                <strong>1.5k</strong>
-                <span>friends</span>
-              </li>
-              <li>
-                <strong>45</strong>
-                <span>feeds</span>
-              </li>
-            </ul>
-          </div>
-          <!--/social-box-->
-        </div>
-
-        <!--/col-->
-        <div class="col-md-3">
-
-          <div class="social-box instagram">
-            <i class="fa fa-instagram"></i>
-            <ul>
-              <li>
-                <strong>1.3k</strong>
-                <span>followers</span>
-              </li>
-              <li>
-                <strong>2562</strong>
-                <span>Hash Tags</span>
-              </li>
-            </ul>
-          </div>
-          <!--/social-box-->
-
-        </div>
-        <div class="col-md-3">
-
-          <div class="social-box twitter">
-            <i class="fa fa-twitter"></i>
-            <ul>
-              <li>
-                <strong>992</strong>
-                <span>followers</span>
-              </li>
-              <li>
-                <strong>452</strong>
-                <span>Twits</span>
-              </li>
-            </ul>
-          </div>
-          <!--/social-box-->
+          <!--/.col-->
 
         </div>
         <!--/col-->

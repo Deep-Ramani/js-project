@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	$_SESSION["currentPage"] = 2;
+	include_once("dbcnt.php");
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +25,25 @@
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
    <script src="js/jquery.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
+
+	  <style>
+		  
+	  .mybtn{
+		font-size: 16px;
+		padding: 12px 40px;
+		color: #fff;
+		border: none;
+		outline: none;
+		letter-spacing: 5px;
+		background: #2196F3;
+		box-sizing: border-box;
+		cursor: pointer;
+		margin: 10px;
+	  }
+	  .col-md-3{
+		  margin-bottom:10px;
+	  }
+	  </style>
 
     <!-- css for hover -->
 
@@ -67,205 +87,55 @@
 <!-- o -->
 <!--//Slider-->
 
+
+			
+
+			
+			
+	
+
 <section id="blog" class="section-padding wow fadeInUp delay-05s">
     <div class="margin12">
     	<h2 class="heading text-center text-uppercase mb-5"> New Items </h2>
-      	<div class="row">
-
-	        <div class="col-md-3 col-sm-4 col-xs-12">
-	          <div class="blog-sec">	
-	            <div class="blog-img">
-	                <img class="imgs" src="images1/Long Black.jpg" class="img-responsive">
-	            </div>
-	            <div class="blog-info">
-	              <h2>Long Black</h2>              
-	            </div>
-	          </div>
-	        </div>
-
-
-	        <div class="col-md-3 col-sm-4 col-xs-12">
-	          <div class="blog-sec">
-	            <div class="blog-img">
-	                <img class="imgs" src="images1/milkshakes/monster-candy.jpeg" class="img-responsive">
-	            </div>
-	            <div class="blog-info">
-	              <h2>Monster Candy</h2>              
-	            </div>
-	          </div>
-	        </div>
-
-
-	        <div class="col-md-3 col-sm-4 col-xs-12">
-	          <div class="blog-sec">
-	            <div class="blog-img">
-	                <img class="imgs" src="images1/cakes/blue.jpg" class="img-responsive">
-	            </div>
-	            <div class="blog-info">
-	              <h2>Blue Bucks Cake</h2>
-	            </div>
-	          </div>
-	        </div>
-
-
-			<div class="col-md-3 col-sm-4 col-xs-12">
-	          <div class="blog-sec">
-	            <div class="blog-img">
-	                <img class="imgs" src="images1/cakes/red.jpg" class="img-responsive">
-	            </div>
-	            <div class="blog-info">
-	              <h2>Black Cherry Cake</h2>
-	            </div>
-	          </div>
-	        </div>
-	        
-      	</div>
-    </div>
-</section>
-
-<!--Food gallery-->
-<section class="banner_bottom proj py-5">
-		<div>
-		<h1 class="heading text-center text-uppercase mb-5"> Products </h1>
-			<div class="inner_sec">
-				<ul class="portfolio-categ filter">
-				
-					<li class="coffee active">
-						<a href="#" title="Category 1">Coffee</a>
-					</li>
-					<li class="tea">
-						<a href="#" title="Category 2">Tea</a>
-					</li>
-					<li class="milkshake">
-						<a href="#" title="Category 3">Milk shake</a>
-					</li>
-					<li class="cake">
-						<a href="#" title="Category 4">Cakes</a>
-					</li>
-				</ul>
-
-
-				<ul class="portfolio-area container-fluid">
-					<?php
-						include("products.php");
-					?>
-				</ul>
-				<!--end portfolio-area -->
-
-					<div class="clearfix"></div>
-			</div>
-
+		<div class="container" style="display: flex;
+  align-items: center;
+  justify-content: center; margin-bottom:20px;">
+			
+			<button id="btn_coffee" class="mybtn" value="coffee" >Coffee</button>
+			<button id="btn_tea" class="mybtn" value="tea" >Tea</button>
+			<button id="btn_milkshake" class="mybtn" value="milkshake" >Milkshake</button>
+			<button id="btn_cake" class="mybtn" value="cake" >Cake</button>
 		</div>
-</section>
-<!--//Food gallery-->
+      	<div class="row" id="product_content">	
 
-<!-- food slider -->
-<section class="food-Slider py-5">
-	<div class="container">
-		<h2 class="heading text-center text-uppercase mb-5"> Special Items </h2>	
-		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<div class="row">
+		  <script src="js/jquery-1.7.2.js"></script>
+				<script>
+					$(document).ready(function() {
+						$("product_content").empty();
+						$("#product_content").load("coffee.php");
+					});
+					$('#btn_milkshake').click(function() {
+						$("product_content").empty();
+						$("#product_content").load("milkshake.php");
+					});
+					$('#btn_coffee').click(function() {
+						$("product_content").empty();
+						$("#product_content").load("coffee.php");
+					});
+					$('#btn_tea').click(function() {
+						$("product_content").empty();
+						$("#product_content").load("tea.php");
+					});
+					$('#btn_cake').click(function() {
+						$("product_content").empty();
+						$("#product_content").load("cake.php");
+					});
 
+				</script>
 
-						<div class="col-lg-3 col-sm-6 slidering">
-							<div class="thumbnail">
-								<img src="images1/cakes/fruit.jpg" alt="Image" style="height: 200px;">
-							</div>
-							<div>
-								<h5 class="my-2 text-left text-uppercase">Fruit Almond</h5> 
-								<h5 class="text-right"><span>&#8377; 325.00</span></h5>
-							</div>
-						</div>
-
-
-						<div class="col-lg-3 col-sm-6 slidering">
-							<div class="thumbnail">
-								<img src="images1/MATE TEA.jpg" alt="Image" style="height: 200px;">
-							</div>
-							<div>
-								<h5 class="my-2 text-left text-uppercase">Mate Tea</h5> 
-								<h5 class="text-right"><span>&#8377; 65.00</span></h5>
-							</div>	
-						</div>
-
-
-						<div class="col-lg-3 col-sm-6 slidering">
-							<div class="thumbnail">
-								<img src="images1/Mocha.jpg" alt="Image" style="height: 200px;">
-							</div>
-							<div>
-								<h5 class="my-2 text-left text-uppercase">Mocha </h5>
-								<h5 class="text-right"><span>&#8377; 120.00</span></h5>
-							</div>
-						</div>
-
-
-						<div class="col-lg-3 col-sm-6 slidering">
-							<div class="thumbnail">
-								<img src="images1/milkshakes/special.jpeg" alt="Image" style="height: 200px;">
-							</div>
-							<div>
-								<h5 class="my-2 text-left text-uppercase"> Sp.Caffeine Rush</h5>
-								<h5 class="text-right"><span>&#8377; 320.00</span></h5>
-							</div>
-						</div>
-
-
-					</div>
-				</div>
-				<div class="item">
-					<div class="row">
-						<div class="col-lg-3 col-sm-6 slidering">
-							<div class="thumbnail">
-								<img src="images1/Affogato.jpg" alt="Image" style="height: 200px;">
-							</div>
-							<div>
-								<h5 class="my-2 text-left text-uppercase">Affogato</h5>
-								<h5 class="text-right"><span>&#8377; 165.00</span></h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6 slidering">
-							<div class="thumbnail">
-								<img src="images1/OOLONG.jpg" alt="Image" style="height: 200px;">
-							</div>
-							<div>
-								<h5 class="my-2 text-left text-uppercase">Oolong Tea </h5>
-								<h5 class="text-right"><span>&#8377; 50.00</span></h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6 slidering">
-							<div class="thumbnail">
-								<img src="images1/cakes/red.jpg" alt="Image" style="height: 200px;">
-							</div>
-							<div>
-								<h5 class="my-2 text-left text-uppercase">Black Cherry</h5>
-								<h5 class="text-right"><span>&#8377; 600.00</span></h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6 slidering">
-							<div class="thumbnail">
-								<img src="images1/milkshakes/monster-candy.jpeg" alt="Image" style="height: 200px;">
-							</div>
-							<div>
-								<h5 class="my-2 text-left text-uppercase">monster candy</h5> 
-								<h5 class="text-right"><span>&#8377; 270.00</span></h5>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-				<span class="fa fa-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-				<span class="fa fa-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
 		</div>
 	</div>
+				
 </section>
 
 <!-- //food slider -->
